@@ -9,10 +9,12 @@ function handleServer(req, res) {
     res.end();
   } else if (req.url === "/contact") {
     res.writeHead(200, { "Content-Type": "application/json" });
-    res.write({
-      phone: "18602100000",
-      email: "guestcaredominos@jublfood.com"
-    });
+    res.write(
+      JSON.stringify({
+        phone: "18602100000",
+        email: "guestcaredominos@jublfood.com"
+      })
+    );
 
     res.end();
   } else {
@@ -20,6 +22,6 @@ function handleServer(req, res) {
     res.end();
   }
 }
-http.Server.listen(8081);
+httpServer.listen(8081);
 
 module.exports = httpServer;
