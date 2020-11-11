@@ -18,9 +18,9 @@ function handleServer(req, res) {
 
     res.end();
   } else {
-    res.writeHead(400, { "Content-Type": "text/html" });
+    res.writeHead(404, { "Content-Type": "text/html" });
 
-    res.end("404 Not Found");
+    res.end();
   }
 }
 httpServer.listen(8081);
